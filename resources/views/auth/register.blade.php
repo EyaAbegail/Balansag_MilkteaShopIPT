@@ -8,6 +8,10 @@
                 <div class="card-body p-4 p-md-5">
                     <p class="eyebrow mb-2">Create account</p>
                     <h1 class="section-title mb-4">Join the Milktea Shop queue</h1>
+                    <div class="guest-auth-actions d-inline-flex flex-wrap gap-2 mb-4">
+                        <a href="{{ route('login') }}" class="btn btn-outline-cta">Login</a>
+                        <a href="{{ route('register') }}" class="btn btn-cta">Register</a>
+                    </div>
 
                     <form method="POST" action="{{ route('register') }}">
                         @csrf

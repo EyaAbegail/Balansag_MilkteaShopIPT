@@ -1,0 +1,28 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="900" fill="#F8EFE8"/>
+<rect x="70" y="70" width="1060" height="760" rx="48" fill="url(#bg)"/>
+<circle cx="944" cy="208" r="136" fill="#FFF4EC" fill-opacity="0.6"/>
+<circle cx="232" cy="690" r="154" fill="#C89A77" fill-opacity="0.34"/>
+<path d="M448 212H752V658C752 701.078 717.078 736 674 736H526C482.922 736 448 701.078 448 658V212Z" fill="url(#cup)"/>
+<rect x="444" y="164" width="312" height="54" rx="27" fill="#FFF6EF"/>
+<rect x="574" y="74" width="46" height="156" rx="23" fill="#6D3C2A"/>
+<path d="M480 244C540 230 590 266 650 248C704 232 736 252 752 272V426C680 382 602 390 544 410C510 422 476 446 448 470V306C452 284 458 260 480 244Z" fill="#F6D0B1" fill-opacity="0.58"/>
+<circle cx="500" cy="614" r="24" fill="#3B221C"/>
+<circle cx="566" cy="642" r="24" fill="#3B221C"/>
+<circle cx="636" cy="614" r="24" fill="#3B221C"/>
+<circle cx="704" cy="642" r="24" fill="#3B221C"/>
+<rect x="146" y="156" width="210" height="40" rx="20" fill="#FFF8F2" fill-opacity="0.82"/>
+<text x="170" y="182" fill="#734632" font-family="Arial, sans-serif" font-size="28" font-weight="700">Specialty Series</text>
+<text x="142" y="716" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="70" font-weight="700">Brown Sugar Boba</text>
+<text x="142" y="790" fill="#FFF1E8" font-family="Arial, sans-serif" font-size="46">Rich swirl, extra pearls</text>
+<defs>
+<linearGradient id="bg" x1="1130" y1="108" x2="120" y2="792" gradientUnits="userSpaceOnUse">
+<stop stop-color="#BE8C6B"/>
+<stop offset="1" stop-color="#5C3228"/>
+</linearGradient>
+<linearGradient id="cup" x1="600" y1="212" x2="600" y2="736" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D0A27E"/>
+<stop offset="1" stop-color="#7A4B39"/>
+</linearGradient>
+</defs>
+</svg>

@@ -50,23 +50,26 @@
 
                     <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                         @guest
-                            <li class="nav-item"><a class="nav-link" href="{{ route('login') }}">Login</a></li>
-                            <li class="nav-item"><a class="btn btn-cta btn-sm px-3" href="{{ route('register') }}">Register</a></li>
+                            <li class="nav-item">
+                                <div class="guest-auth-actions d-flex flex-wrap gap-2">
+                                    <a class="btn btn-outline-cta btn-sm px-3" href="{{ route('login') }}">Login</a>
+                                    <a class="btn btn-cta btn-sm px-3" href="{{ route('register') }}">Register</a>
+                                </div>
+                            </li>
                         @else
                             <li class="nav-item"><span class="nav-link text-white-50">{{ auth()->user()->role }}</span></li>
+                            <li class="nav-item">
+                                <form action="{{ route('logout') }}" method="POST" class="m-0">
+                                    @csrf
+                                    <button type="submit" class="btn btn-outline-cta btn-sm px-3">Logout</button>
+                                </form>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                                     {{ Auth::user()->name }}
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-end border-0 shadow-lg">
                                     <a class="dropdown-item" href="{{ route('home') }}">Dashboard</a>
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                                        Logout
-                                    </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
                                 </div>
                             </li>
                         @endguest

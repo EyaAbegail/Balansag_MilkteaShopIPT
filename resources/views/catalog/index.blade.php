@@ -18,7 +18,10 @@
                     <div class="hero-actions d-flex flex-wrap gap-3 mb-4">
                         <a href="#menu-grid" class="btn btn-cta px-4">Browse the menu</a>
                         @guest
-                            <a href="{{ route('register') }}" class="btn btn-outline-dark px-4">Create an account</a>
+                            <div class="guest-auth-actions d-flex flex-wrap gap-2">
+                                <a href="{{ route('login') }}" class="btn btn-outline-cta px-4">Login</a>
+                                <a href="{{ route('register') }}" class="btn btn-cta px-4">Register</a>
+                            </div>
                         @else
                             <a href="{{ route('home') }}" class="btn btn-outline-dark px-4">Open dashboard</a>
                         @endguest
@@ -32,18 +35,40 @@
                 </div>
                 <div class="col-lg-5">
                     <div class="hero-showcase shadow-lg">
-                        <img src="{{ asset('storage/showcase/milktea-showcase.jpg') }}" alt="BILLATEA Milk Tea Selection" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0">
+                        <img src="{{ $featuredDrinks->first()?->image_url ?? asset('pics/Wintermelon-Milk-Tea.jpg') }}" alt="BILLATEA Milk Tea Selection" class="w-100 h-100 object-fit-cover position-absolute top-0 start-0">
                         <div class="hero-showcase__card">
                             <p class="eyebrow mb-2">Today’s highlights</p>
                             <h2 class="h3 mb-3">Best-selling blends</h2>
                             @forelse ($featuredDrinks as $drink)
-                                <div class="featured-item">
-                                    <div>
-                                        <strong>{{ $drink->name }}</strong>
-                                        <div class="small text-muted">{{ $drink->category->name ?? 'Signature' }} · Freshly made</div>
+                                @if ($loop->first)
+                                    @php $scrollingHighlights = $featuredDrinks->count() > 1; @endphp
+                                    <div class="featured-scroll{{ $scrollingHighlights ? ' is-animated' : '' }}">
+                                        <div class="featured-scroll__track">
+                                @endif
+                                            <div class="featured-item">
+                                                <img src="{{ $drink->image_url }}" alt="{{ $drink->name }}" class="featured-item__image">
+                                                <div class="featured-item__copy">
+                                                    <strong>{{ $drink->name }}</strong>
+                                                    <div class="small text-muted">{{ $drink->category->name ?? 'Signature' }} · Freshly made</div>
+                                                </div>
+                                                <span class="fw-semibold">PHP {{ number_format($drink->price, 2) }}</span>
+                                            </div>
+                                @if ($loop->last && $scrollingHighlights)
+                                    @foreach ($featuredDrinks as $duplicateDrink)
+                                        <div class="featured-item featured-item--clone" aria-hidden="true">
+                                            <img src="{{ $duplicateDrink->image_url }}" alt="" class="featured-item__image">
+                                            <div class="featured-item__copy">
+                                                <strong>{{ $duplicateDrink->name }}</strong>
+                                                <div class="small text-muted">{{ $duplicateDrink->category->name ?? 'Signature' }} · Freshly made</div>
+                                            </div>
+                                            <span class="fw-semibold">PHP {{ number_format($duplicateDrink->price, 2) }}</span>
+                                        </div>
+                                    @endforeach
+                                @endif
+                                @if ($loop->last)
+                                        </div>
                                     </div>
-                                    <span class="fw-semibold">PHP {{ number_format($drink->price, 2) }}</span>
-                                </div>
+                                @endif
                             @empty
                                 <p class="text-muted mb-0">No featured drinks yet.</p>
                             @endforelse
@@ -110,11 +135,7 @@
                             <div class="col-md-6">
                                 <div class="card menu-card h-100 border-0 shadow-sm">
                                     <div class="menu-card__media">
-                                        @if ($drink->image_path)
-                                            <img src="{{ Storage::disk('public')->url($drink->image_path) }}" alt="{{ $drink->name }}" class="menu-image">
-                                        @else
-                                            <div class="menu-image placeholder-image">Freshly brewed</div>
-                                        @endif
+                                        <img src="{{ $drink->image_url }}" alt="{{ $drink->name }}" class="menu-image">
                                         <div class="menu-card__badges">
                                             @if ($isPopular)
                                                 <span class="menu-badge">Popular</span>
@@ -123,13 +144,18 @@
                                         </div>
                                     </div>
 
-                                    <div class="card-body">
-                                        <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <div class="card-body menu-card__body">
+                                        <div class="d-flex justify-content-between align-items-start gap-3 mb-2">
                                             <div>
-                                                <h3 class="h5 mb-1">{{ $drink->name }}</h3>
+                                                <h3 class="h5 mb-1 menu-card__title">{{ $drink->name }}</h3>
                                                 <p class="text-muted small mb-0">{{ $drink->description }}</p>
                                             </div>
                                             <span class="price-tag">PHP {{ number_format($drink->price, 2) }}</span>
+                                        </div>
+
+                                        <div class="menu-card__footer-copy">
+                                            <span>{{ $category->name }}</span>
+                                            <span>Freshly made to order</span>
                                         </div>
 
                                         <div class="menu-meta">

@@ -9,6 +9,10 @@
                     <p class="eyebrow mb-2">Welcome back</p>
                     <h1 class="section-title mb-3">Sign in to the Milktea Shop</h1>
                     <p class="text-muted mb-4">Use the seeded demo accounts if you want to explore quickly: admin@milktea.test, staff@milktea.test, or customer@milktea.test with password password.</p>
+                    <div class="guest-auth-actions d-inline-flex flex-wrap gap-2 mb-4">
+                        <a href="{{ route('login') }}" class="btn btn-outline-cta active">Login</a>
+                        <a href="{{ route('register') }}" class="btn btn-cta">Register</a>
+                    </div>
 
                     <form method="POST" action="{{ route('login') }}">
                         @csrf

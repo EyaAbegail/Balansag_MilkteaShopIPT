@@ -77,12 +77,12 @@ class DatabaseSeeder extends Seeder
             [$specialty, 'Matcha Cheesecake', 'Earthy matcha topped with cream cheese.', 135, 18, false],
         ])->map(function (array $drink, int $index) {
             $imagePaths = [
-                'pics/WinterMelon-Milk-Tea.jpg',   // <- corrected to match your file
-                'drinks/okinawa-milk-tea.jpg',
-                'drinks/lychee-green-tea.jpg',
-                'drinks/passionfruit-black-tea.jpg',
-                'drinks/brown-sugar-boba.jpg',
-                'drinks/matcha-cheesecake.jpg',
+                'pics/Wintermelon-Milk-Tea.jpg',
+                'pics/Okinawa-Milk-Tea.jpg',
+                'pics/Lychee-Milk_Tea.jpeg',
+                'pics/Passionfruit-Black-Tea.jpg',
+                'pics/Brown-Sugar-Milk-Tea.jpeg',
+                'pics/Matcha-CheeseCake-Milk-Tea.jpeg',
             ];
 
             return Drink::create([

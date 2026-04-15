@@ -1,0 +1,27 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1200" height="900" fill="#F6EEE8"/>
+<rect x="70" y="70" width="1060" height="760" rx="48" fill="url(#bg)"/>
+<circle cx="954" cy="212" r="126" fill="#FFF1E8" fill-opacity="0.65"/>
+<circle cx="230" cy="668" r="148" fill="#F2C3A3" fill-opacity="0.38"/>
+<rect x="412" y="186" width="376" height="494" rx="110" fill="url(#cup)"/>
+<rect x="450" y="148" width="300" height="54" rx="27" fill="#FFF8F2"/>
+<rect x="575" y="74" width="44" height="156" rx="22" fill="#A55C46"/>
+<circle cx="496" cy="592" r="23" fill="#4F2C21"/>
+<circle cx="566" cy="620" r="25" fill="#4F2C21"/>
+<circle cx="640" cy="596" r="24" fill="#4F2C21"/>
+<circle cx="706" cy="624" r="26" fill="#4F2C21"/>
+<rect x="146" y="156" width="200" height="40" rx="20" fill="#FFF7F0" fill-opacity="0.82"/>
+<text x="172" y="182" fill="#8B4A39" font-family="Arial, sans-serif" font-size="28" font-weight="700">Classic Series</text>
+<text x="142" y="716" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="74" font-weight="700">Okinawa</text>
+<text x="142" y="790" fill="#FFF1E8" font-family="Arial, sans-serif" font-size="48">Brown sugar creaminess</text>
+<defs>
+<linearGradient id="bg" x1="1130" y1="108" x2="120" y2="794" gradientUnits="userSpaceOnUse">
+<stop stop-color="#C36C54"/>
+<stop offset="1" stop-color="#6B372A"/>
+</linearGradient>
+<linearGradient id="cup" x1="600" y1="186" x2="600" y2="680" gradientUnits="userSpaceOnUse">
+<stop stop-color="#E7B18D"/>
+<stop offset="1" stop-color="#8E543B"/>
+</linearGradient>
+</defs>
+</svg>
