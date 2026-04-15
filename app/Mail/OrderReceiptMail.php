@@ -20,7 +20,7 @@ class OrderReceiptMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Your Milktea Shop order receipt',
+            subject: 'Your BILLATEA Shop order receipt',
         );
     }
 

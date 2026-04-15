@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Milktea Shop') }}</title>
+    <title>{{ config('app.name', 'BILLATEA Shop') }}</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=outfit:300,400,500,600,700|sora:400,500,600,700" rel="stylesheet">
@@ -14,9 +14,21 @@
 </head>
 <body class="shop-shell">
     <div id="app">
+        <div class="topbar-note">
+            <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+                <span>Freshly brewed milk tea, fruit coolers, and café-style favorites.</span>
+                <span class="topbar-note__meta">Open daily 10:00 AM - 9:00 PM</span>
+            </div>
+        </div>
         <nav class="navbar navbar-expand-lg navbar-dark app-navbar sticky-top">
             <div class="container">
-                <a class="navbar-brand fw-bold" href="{{ route('catalog.index') }}">Milktea Shop</a>
+                <a class="navbar-brand fw-bold d-flex align-items-center gap-3" href="{{ route('catalog.index') }}">
+                    <span class="brand-mark">B</span>
+                    <span>
+                        <span class="d-block">BILLATEA Shop</span>
+                        <small class="brand-subtitle">Crafted drinks and quick pickup</small>
+                    </span>
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>

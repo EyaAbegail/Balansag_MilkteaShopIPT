@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Order;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\Auth;
 
 class CatalogController extends Controller
 {
@@ -24,9 +25,9 @@ class CatalogController extends Controller
             ->where('is_featured', true)
             ->take(3);
 
-        $recentOrders = auth()->check()
+        $recentOrders = Auth::check()
             ? Order::query()
-                ->where('user_id', auth()->id())
+                ->where('user_id', Auth::id())
                 ->latest()
                 ->take(5)
                 ->get()

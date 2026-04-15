@@ -55,6 +55,6 @@ class ReportController extends Controller
 
         return Pdf::loadView('reports.pdf', $data)
             ->setPaper('a4', 'portrait')
-            ->download('milktea-shop-report.pdf');
+            ->download('billatea-shop-report.pdf');
     }
 }

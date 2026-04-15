@@ -75,7 +75,16 @@ class DatabaseSeeder extends Seeder
             [$fruit, 'Passionfruit Black Tea', 'Tangy and vibrant iced tea.', 92, 24, false],
             [$specialty, 'Brown Sugar Boba', 'Rich muscovado swirl with pearls.', 120, 30, true],
             [$specialty, 'Matcha Cheesecake', 'Earthy matcha topped with cream cheese.', 135, 18, false],
-        ])->map(function (array $drink) {
+        ])->map(function (array $drink, int $index) {
+            $imagePaths = [
+                'pics/WinterMelon-Milk-Tea.jpg',   // <- corrected to match your file
+                'drinks/okinawa-milk-tea.jpg',
+                'drinks/lychee-green-tea.jpg',
+                'drinks/passionfruit-black-tea.jpg',
+                'drinks/brown-sugar-boba.jpg',
+                'drinks/matcha-cheesecake.jpg',
+            ];
+
             return Drink::create([
                 'category_id' => $drink[0]->id,
                 'name' => $drink[1],
@@ -85,6 +94,7 @@ class DatabaseSeeder extends Seeder
                 'stock' => $drink[4],
                 'is_featured' => $drink[5],
                 'is_available' => true,
+                'image_path' => $imagePaths[$index] ?? null,
             ]);
         });
 
